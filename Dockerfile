@@ -1,3 +1,8 @@
-FROM nginx:1.19-alpine
+FROM debian:9.5-slim
 
-ADD index.html /usr/share/nginx/html
+ADD entrypoint.sh /entrypoint.sh
+
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
+
